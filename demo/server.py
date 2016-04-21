@@ -5,6 +5,7 @@ import networkx
 import networkx.readwrite.json_graph
 
 import json
+import os
 
 
 @bottle.route('/dependencies')
@@ -135,6 +136,8 @@ class ConcourseShim(object):
 def main():
     GRAPH = 'build-graph.json'
 
+    PORT = os.environ.get('PORT', 8080)
+
     with open(GRAPH) as f:
         build_graph = json.load(f)
 
@@ -150,7 +153,7 @@ def main():
     def serve_file(filepath):
         return bottle.static_file(filepath, root='..')
 
-    bottle.run(root)
+    bottle.run(root, port=PORT)
 
 
 main()

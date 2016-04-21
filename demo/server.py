@@ -136,6 +136,7 @@ class ConcourseShim(object):
 def main():
     GRAPH = 'build-graph.json'
 
+    HOST = os.environ.get('HOST', '0.0.0.0')
     PORT = os.environ.get('PORT', 8080)
 
     with open(GRAPH) as f:
@@ -153,7 +154,7 @@ def main():
     def serve_file(filepath):
         return bottle.static_file(filepath, root='..')
 
-    bottle.run(root, port=PORT)
+    bottle.run(root, host=HOST, port=PORT)
 
 
 main()

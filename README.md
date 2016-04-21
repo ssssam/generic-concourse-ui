@@ -1,10 +1,13 @@
-This is an attempt to extract the user interface parts of the [Concourse CI
-system](http://www.concourse.ci/) out into a reusable library.
+This is a demonstration of how use the frontend user interface of the
+[Concourse CI system](http://www.concourse.ci/) independently of the rest
+of Concourse.
 
-For normal use cases it's better to use the Concourse CI system as a
-whol. But certain limits in Concourse mean that adapting existing processes to
-use the Concourse CI system as a whole can be a huge hack. The limits I'm
-talking about are:
+Be aware that this is a hack and not supported by the Concourse developers.
+
+For normal use cases it's better to use the Concourse CI system as its
+developers intended. But certain limits in Concourse mean that adapting
+existing processes to use the Concourse CI system as a whole can be a huge
+hack. The limits I'm talking about are:
 
   - the build process must be controlled by Concourse.
   - the build process must run in a container on an OS supported by the

@@ -14,8 +14,10 @@ import sys
 
 INPUT_NAMES = '/usr/share/dict/words'
 
-N_NODES = 1000
-N_EDGES = 2000
+# Remember Concourse's UI kills your browser if given more than a couple
+# of hundred nodes... or if there's any cycles
+N_NODES = 10
+N_EDGES = 5
 
 
 # Return a random graph with a fixed number of nodes and edges.

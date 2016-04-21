@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Generic Concourse UI</title>
+
+    <link href="../atc/web/public/main.css" media="all" rel="stylesheet" type="text/css" />
+  </head>
+
+<body>
+  <div id="content">
+    <div id="pipeline">
+    </div>
+  </div>
+</body>
+
+<script src="../atc/web/public/jquery-2.1.1.min.js"></script>
+<script src="../atc/web/public/d3.v355.min.js"></script>
+<script src="../atc/web/public/graph.js"></script>
+<script src="../atc/web/public/index.js"></script>
+<script src="../atc/web/public/concourse.js"></script>
+
+<script>
+groups = {"builds": true}
+concourse.pipelineName = "main";
+
+$(document).ready(function() {
+  renderPipeline(groups);
+})
+</script>
+</html>

@@ -148,6 +148,13 @@ def main():
     root = bottle.Bottle()
     root.mount('/api/v1', concourse_shim.app)
 
+    # Avoid 404 errors in these cases.
+    @root.route('/')
+    @root.route('/demo')
+    @root.route('/demo/')
+    def index_redirect():
+        return bottle.redirect('/demo/index.html')
+
     # Everything else is treated as a file path, in the parent directory
     # (so we can get at Concourse ATC's files inside the ../atc/ submodule.
     @root.route('/<filepath:path>')

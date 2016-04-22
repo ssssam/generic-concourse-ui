@@ -22,4 +22,8 @@ hack. The limits I'm talking about are:
 Using generic-concourse-ui you can adapt the nice UI of Concourse without
 having to contort your processes to match Concourse's expectations.
 
+An instance of this may be running at:
+
+  <http://generic-concourse-ui.herokuapp.com/>
+
 All code is distributed under the same license as Concourse: Apache 2.0.
